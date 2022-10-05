@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Complaint, Feedback, Employee
+from .models import Complaint, Feedback
 from .forms import FeedbackForm
 from users.models import Employee
 
@@ -16,8 +16,7 @@ def complaint_list(request):
     complaint_exists = True
     if request.user.profile.is_employee:
         employee_id = Employee.objects.get(employee=request.user)
-        user_complaints = Complaint.objects.filter(
-            assigned_employee=employee_id).order_by('-id')
+        user_complaints = Complaint.objects.filter(assigned_employee=employee_id).order_by('-id')
 
     else:
         user_complaints = Complaint.objects.filter(

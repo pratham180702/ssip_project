@@ -4,6 +4,7 @@ from PIL import Image, ImageOps
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import sys
+# from adminusers.models import AdminUsers
 
 
 class Profile(models.Model):

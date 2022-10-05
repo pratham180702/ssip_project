@@ -18,6 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from users import views as user_views
+from adminusers import views as adminuser_views
 from complaints.views import complaint_list
 from django.contrib.auth import views as auth_views
 urlpatterns = [
@@ -32,6 +33,7 @@ urlpatterns = [
     path('admin-login/',user_views.login_admin,name='admin-login'),
     path('logout/',auth_views.LogoutView.as_view(template_name='logout.html'),name='logout'),
     path('complaints/', include('complaints.urls')),
+    path('main-admin/', adminuser_views.admin_register),
 ]
 
 if settings.DEBUG:

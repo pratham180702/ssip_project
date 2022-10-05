@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'complaints',
-    'foodadmin',
-    'civiladmin',
+    'adminusers',
 ]
 
 MIDDLEWARE = [
