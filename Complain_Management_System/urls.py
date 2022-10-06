@@ -34,6 +34,9 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(template_name='logout.html'),name='logout'),
     path('complaints/', include('complaints.urls')),
     path('main-admin/', adminuser_views.admin_register),
+    path('main-adminlogin/', adminuser_views.login_page,name='mainadmin-login'),
+    path('main-admindashboard/', adminuser_views.dashboard_page,name='mainadmin-dashboard'),
+    # path('main-admin/', include('adminusers.urls')),
 ]
 
 if settings.DEBUG:

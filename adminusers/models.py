@@ -1,6 +1,9 @@
 from email.policy import default
+from tkinter.messagebox import NO
 from django.db import models
 from complaints.models import Category
+from django import forms
+from django.contrib.auth.models import AbstractBaseUser
 # Create your models here.
 
 class AdminUsers(models.Model):
@@ -13,7 +16,9 @@ class AdminUsers(models.Model):
     username = models.CharField(max_length=50)
     category_select = models.ForeignKey(Category, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
-    # password
+    password = models.CharField(max_length=50, default= None)
+
+    # confirpassword = models.CharField(max_length = 200,None)
 
     def __str__(self):
         return self.first_name

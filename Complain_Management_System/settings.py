@@ -137,3 +137,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'complaint-list'
 
 LOGIN_URL = 'login' 
+
+# AUTH_USER_MODEL = 'adminusers.AdminUsers'
