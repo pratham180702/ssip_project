@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'crispy_forms',
+    "crispy_tailwind",
     'complaints',
     # 'adminusers',
 ]
@@ -129,10 +130,17 @@ USE_TZ = True
 # ]
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR + '/' + "static",
+    '/var/www/static/',
+]
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 LOGIN_REDIRECT_URL = 'complaint-list'
 
