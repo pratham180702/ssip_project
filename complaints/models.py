@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
-from users.models import Employee 
 from django.shortcuts import get_object_or_404
-# Create your models here.
+
+class User(AbstractUser):
+    is_employee = models.BooleanField(default=False)
 
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
@@ -23,13 +24,18 @@ class Complaint(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
-    assigned_employee = models.ForeignKey(Employee, null=True, blank=True, on_delete=models.CASCADE)
+    # assigned_employee = models.ForeignKey(Employee, null=True, blank=True, on_delete=models.CASCADE)
     status_choices = [
-        (1, 'Pending'),
-        (2, 'Solved')
+        (1, 'Not Reviewed'),
+        (2, 'Processing'),
+        (3, 'Done'),
+        (4, 'Rejected'),
     ]
     status = models.IntegerField(choices=status_choices, default=1)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    # added now
+    deadline = models.DateTimeField(auto_now_add=True, blank=True)
+    # ..    
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
@@ -45,6 +51,7 @@ class Feedback(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField(max_length=120)
     date_posted = models.DateTimeField(default=timezone.now)
+
 
     def __str__(self):
         return '{}-{}'.format(self.complaint.title, str(self.user.username))

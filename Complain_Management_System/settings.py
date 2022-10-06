@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'complaints',
-    'adminusers',
+    # 'adminusers',
 ]
 
 MIDDLEWARE = [
@@ -138,4 +138,4 @@ LOGIN_REDIRECT_URL = 'complaint-list'
 
 LOGIN_URL = 'login' 
 
-# AUTH_USER_MODEL = 'adminusers.AdminUsers'
+AUTH_USER_MODEL = 'complaints.User'
