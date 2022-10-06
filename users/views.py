@@ -137,3 +137,6 @@ def dashboard_page(request):
         "pk":18
     }
     return render(request, 'admindashboard.html', context)
+
+def landing(request):
+    return render(request, 'landing/landing.html')
