@@ -11,11 +11,12 @@ from .forms import (UserRegisterForm,
 #added now
 from django import forms
 from django.http import *
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .models import Employee
+from complaints.models import Complaint
 
 def register(request):
     if request.method=='POST':
@@ -34,6 +35,23 @@ def register(request):
     return render(request,'register.html',context)
 
 
+@login_required
+def Complaints(request):
+    complaint = Complaint.objects.all()
+    context = {
+    'complaints': complaint
+    }
+    return render(request, 'complaint/complaints.html', context)
+
+@login_required
+def YourComplaints(request):
+    complaint = Complaint.objects.filter(user_id=request.user.id)
+    user = get_object_or_404(User, pk=request.user.id)
+    context = {
+        'complaints' : complaint,
+        'user': user
+    }
+    return render(request, 'complaint/your_complaints.html', context)
 
 @login_required
 def profile(request):

@@ -1,0 +1,52 @@
+{% extends "layouts/user_base.html" %}
+{% load static %}
+{% block css_link %}
+{% endblock %}
+
+{% block content %}
+
+ <main class="max-w-6xl sm:flex sm:gap-5 mx-auto mt-20 font-outfit">
+      <section
+        class="flex sm:basis-3/12 justify-start sm:w-4/12 bg-gray-50 rounded-xl h-min gap-5 p-3"
+      >
+        <div class="text-gray-700 flex flex-col space-y-3 pl-4">
+          <h1 class="text-2xl font-bold">Profile Details</h1>
+          <h1 class="text-xl font-medium">name : {{user.first_name}}</h1>
+          <h1 class="text-xl font-medium">email : {{user.email}}</h1>
+          <h1 class="text-xl font-medium">username : {{user.username}}</h1>
+        </div>
+      </section>
+      <!-- complaints  -->
+      <section class="sm:basis-9/12 mt-5 sm:mt-0">
+        <div class="flex justify-center">
+          <div class="grid sm:grid-cols-2 grid-cols-1 justify-center gap-5">
+                {% for c in complaints %}
+  <div class="flex flex-col gap-8 bg-gray-100 rounded-xl p-5">
+              <div class="grid grid-cols-2">
+                <span class="status text-left text-orange-500 font-bold"
+                  >PENDING</span
+                >
+                <span class="date text-right ">{{c.date_posted}}</span>
+              </div>
+              <div class="flex justify-center">
+                <h1 class="text-2xl font-semibold">{{c.title}}</h1>
+              </div>
+              <div class="text-gray-700 mx-5">
+                {{c.details|truncatewords_html:30}}
+              </div>
+              <div class="flex justify-center my-5">
+                <a
+                  class="transition-transform hover:scale-105 duration-500 rounded-md hover:bg-indigo-700 bg-gray-900 px-5 py-2.5 text-sm font-bold text-white"
+                  href="/complaints/{{c.id}}"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {% endblock content %}
