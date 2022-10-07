@@ -1,14 +1,14 @@
-{% extends "layouts/auth_base.html" %}
+{% extends "base.html" %}
 {% load static %}
 <!-- {% block css_link %}
 <link rel="stylesheet" href="{% static 'users/main.css' %}">
 {% endblock %} -->
 
 {% block content %}
-    <div class="flex flex-col justify-center items-center h-96">
-        <h2 class="text-3xl font-semibold">You have been logged out</h2>
-        <div class="text-xl font-medium">
-            <small class="text-lg text-indigo-600">
+    <div class="content-section">
+        <h2>You have been logged out</h2>
+        <div class="border-top pt-3">
+            <small class="text-muted">
                 <a href="{% url 'login' %}">Log In Again</a>
             </small>
         </div>

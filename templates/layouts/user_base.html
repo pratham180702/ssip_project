@@ -24,13 +24,11 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center justify-center md:gap-5 gap-2">
-            <a href="/">
- <img
-              src="{% static 'logo/amc_logo.jpg' %}"
+            <img
+              src="{% static 'amc_logo.jpg' %}"
               class="sm:h-24 h-14"
               alt=""
             />
-            </a>
             <h1 class="font-bold sm:text-5xl text-3xl">AMC</h1>
           </div>
 
@@ -40,39 +38,58 @@
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-black"
-                    href="/complaints/"
+                    href="#banner"
                   >
-                    Complaints
+                    Home
                   </a>
                 </li>
 
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-black"
-                    href="/complaints/new"
+                    href="#about"
                   >
-                    Add Complaints
+                    About
                   </a>
                 </li>
 
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-black"
-                    href="/your-complaints"
+                    href="#process"
                   >
-                    Your Complants
+                    Process
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-black"
+                    href="#contact"
+                  >
+                    Contact
                   </a>
                 </li>
               </ul>
             </nav>
+
             <div class="flex items-center gap-4">
               <div class="sm:flex sm:gap-4">
                 <a
                   class="transition-transform hover:scale-105 duration-500 rounded-md hover:bg-indigo-700 bg-indigo-500 px-5 py-2.5 text-sm font-bold text-white shadow"
-                  href="/logout"
+                  href="/"
                 >
-                  Logout
+                  Login
                 </a>
+
+                <div class="hidden sm:flex">
+                  <a
+                    class="transition-transform hover:scale-105 duration-500 rounded-md bg-gray-900 px-5 py-2.5 text-sm font-bold text-white"
+                    href="/"
+                  >
+                    Register
+                  </a>
+                </div>
               </div>
 
               <div class="block md:hidden">
@@ -138,15 +155,16 @@
               <nav
                 class="flex flex-col divide-y divide-gray-200 border-t border-b border-gray-200 text-sm font-medium text-gray-500"
               >
-                <a href="/" class="px-6 py-3"> Complaints </a>
-                <a href="/complaints/new" class="px-6 py-3"> Add Complaints </a>
-                <a href="/your-complaints" class="px-6 py-3"> Your Complaints </a>
+                <a href="#banner" class="px-6 py-3"> Home </a>
+                <a href="#about" class="px-6 py-3"> About </a>
+                <a href="#process" class="px-6 py-3"> Process </a>
+                <a href="#contact" class="px-6 py-3"> Contact </a>
                 <div class="flex justify-center mt-20">
                   <a
                     class="transition-transform hover:scale-105 duration-500 rounded-md bg-gray-900 px-5 py-2.5 text-sm font-bold text-white"
-                    href="/logout"
+                    href="/"
                   >
-                    Logout
+                    Register
                   </a>
                 </div>
               </nav>
@@ -167,7 +185,7 @@
             <div
               class="flex justify-center sm:justify-start items-center gap-3"
             >
-              <img src="{% static 'logo/amc_logo.jpg' %}" class="h-20" alt="" />
+              <img src="{% static 'amc_logo.jpg' %}" class="h-20" alt="" />
               <h1 class="font-bold text-5xl">AMC</h1>
             </div>
 

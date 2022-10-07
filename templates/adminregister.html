@@ -1,26 +1,54 @@
-{% extends "layouts/auth_base.html" %} 
-{% load crispy_forms_tags %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% block css_link %}
 <!-- <link rel="stylesheet" href="{% static 'users/main.css' %}"> -->
-{% endblock %} {% block content %}
-<div class="w-screen mt-20 mb-10">
-<div class="flex justify-center items-center bg-gray-100  sm:w-4/12 mx-auto p-5 rounded-xl">
-        <form method="POST" class="w-2/3">
-          {% csrf_token %}
-          <fieldset class="form-group">
-            <legend
-              class="text-center text-2xl font-bold mb-10"
-            >
-              Sign Up
-            </legend>
-            {{ form|crispy }}
-          </fieldset>
-          <div class="flex justify-center my-5">
-            <button class="bg-black hover:bg-indigo-500 py-2 px-5 text-white font-bold text-xl rounded-xl" type="submit">Sign up</button>
-          </div>
-        </form>
-</div>
-</div>
+<style>
+    .login{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        color: #969696;
+        
+    }
+    .login-body{
+        background-color: white;
+    }
+    body{
+        background-color: #F0EFF4;
+    }
+    .loginBtn, .loginBtn:active,
+.loginBtn:visited,
+.loginBtn:focus {
+        background-color: #969696;
+        border: #969696;
+        color: white;
+    }
+    .loginBtn:hover{
+        background-color: #7f7e7e;
+    }
+</style>
+{% endblock %}
 
+{% block content %}
+<div class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-5 login-body pl-4 pr-4 pb-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom pt-4 pb-4 text-center" style="color: black;">ADMIN REGISTER</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn w-100 loginBtn" type="submit">REGISTER</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

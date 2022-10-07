@@ -36,8 +36,7 @@ urlpatterns = [
     path('main-admin/', user_views.admin_register),
     path('main-adminlogin/', user_views.admin_login,name='mainadmin-login'),
     path('main-admindashboard/', user_views.dashboard_page,name='mainadmin-dashboard'),
-    path('complaints/', user_views.Complaints, name='complaint'),
-    path('your-complaints/', user_views.YourComplaints, name='your-complaints')
+    path('landing/', user_views.landing,name='landing'),
     # path('main-admin/', include('adminusers.urls')),
 ]
 
