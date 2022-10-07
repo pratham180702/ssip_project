@@ -24,432 +24,43 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center justify-center md:gap-5 gap-2">
+            <a href="/">
             <img
               src="{% static 'logo/amc_logo.jpg' %}"
               class="sm:h-24 h-14"
               alt=""
             />
+            </a>
             <h1 class="font-bold sm:text-5xl text-3xl">AMC</h1>
           </div>
 
           <div class="md:flex md:items-center md:gap-12">
-            <nav class="hidden md:block" aria-labelledby="header-navigation">
-              <ul class="flex items-center font-semibold gap-6 text-lg">
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-black"
-                    href="#banner"
-                  >
-                    Home
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-black"
-                    href="#about"
-                  >
-                    About
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-black"
-                    href="#process"
-                  >
-                    Process
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-black"
-                    href="#contact"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-            <div class="flex items-center gap-4">
-              <div class="sm:flex sm:gap-4">
+            <div class="flex items-center gap-4 ">
+              <div class="flex sm:gap-4 gap-1">
                 <a
-                  class="transition-transform hover:scale-105 duration-500 rounded-md hover:bg-indigo-700 bg-indigo-500 px-5 py-2.5 text-sm font-bold text-white shadow"
+                  class="transition-transform hover:scale-105 duration-500 rounded-md hover:bg-indigo-700 bg-indigo-500 sm:px-5 px-2.5 py-1.5 sm:py-2.5 text-sm font-bold text-white shadow"
                   href="/login"
                 >
                   Login
                 </a>
 
-                <div class="hidden sm:flex">
+                <div class="flex">
                   <a
-                    class="transition-transform hover:scale-105 duration-500 rounded-md bg-gray-900 px-5 py-2.5 text-sm font-bold text-white"
+                    class="transition-transform hover:scale-105 duration-500 rounded-md bg-gray-900 sm:px-5 sm:py-2.5 px-2.5 py-1.5 text-sm font-bold text-white"
                     href="/register"
                   >
                     Register
                   </a>
                 </div>
               </div>
-
-              <div class="block md:hidden">
-                <button
-                  onclick="MobileMenu()"
-                  title="some"
-                  class="rounded bg-gray-100 p-2 text-gray-500 transition hover:text-gray-500/75"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
-      <section id="mobile-nav" class="hidden fixed inset-y-0 right-0 z-50 flex">
-        <div class="w-56 max-w-sm">
-          <div class="flex h-full flex-col divide-y divide-gray-200 bg-gray-50">
-            <div class="overflow-y-scroll">
-              <header class="flex h-16 items-center justify-between pl-6">
-                <span
-                  class="text-lg font-semibold text-indigo-500 uppercase tracking-widest"
-                >
-                  Menu
-                </span>
-
-                <button
-                  onclick="MobileMenu()"
-                  aria-label="Close menu"
-                  class="h-16 w-16 border-l border-gray-200"
-                  type="button"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mx-auto h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </header>
-
-              <nav
-                class="flex flex-col divide-y divide-gray-200 border-t border-b border-gray-200 text-sm font-medium text-gray-500"
-              >
-                <a href="#banner" class="px-6 py-3"> Home </a>
-                <a href="#about" class="px-6 py-3"> About </a>
-                <a href="#process" class="px-6 py-3"> Process </a>
-                <a href="#contact" class="px-6 py-3"> Contact </a>
-                <div class="flex justify-center mt-20">
-                  <a
-                    class="transition-transform hover:scale-105 duration-500 rounded-md bg-gray-900 px-5 py-2.5 text-sm font-bold text-white"
-                    href="/"
-                  >
-                    Register
-                  </a>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </section>
     </header>
-
-    <main>
-      <!-- hero section -->
-      <section
-        id="banner"
-        class="max-w-6xl mx-auto flex justify-between flex-wrap lg:flex-nowrap pt-10"
-      >
-        <div class="lg:basis-6/12 basis-full gsap-hero-image sm:pt-16 pt-5">
-          <h1
-            class="lg:text-5xl text-2xl lg:text-left text-center font-bold pl-5 pt-5"
-          >
-            File your Complaint Get it resolved by
-            <span class="text-indigo-500">AMC</span>
-          </h1>
-          <p
-            class="font-medium lg:text-lg text-xs lg:text-left text-center lg:mx-0 mx-auto w-2/3 lg:pl-5 lg:pt-8 pt-3"
-          >
-            You can file your complaint from your smartphone, desktop or laptop!
-            Just register into the portal to file your complaint
-          </p>
-          <div
-            class="flex lg:text-base text-xs lg:pt-8 pt-4 lg:pl-10 lg:justify-start justify-center lg:gap-10 gap-6"
-          >
-            <button
-              type="button"
-              title="Register"
-              class="bg-indigo-500 rounded-xl transition-transform hover:scale-110 duration-500"
-            >
-            <a href="/login">
-              <span class="font-bold text-white p-5"> File Complaint </span>
-            </a>
-            </button>
-            <a
-              title="know more"
-              href="#about"
-              class="transition-transform hover:scale-110 duration-500 text-indigo-500 hover:underline underline-offset-4 decoration-indigo-400 font-semibold p-2 cursor-pointer"
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
-        <div
-          class="relative gsap-hero-text basis-full lg:basis-5/12 pt-10 sm-pt-0"
-        >
-          <div class="flex justify-center">
-            <img
-              src="{% static 'landing/banner_image.png' %}"
-              alt="ddsf"
-              class="transition-transform hover:scale-105 duration-500 sm:hidden h-56 center"
-              draggable="false"
-            />
-          </div>
-          <img
-            src="{% static 'landing/banner_image.png' %}"
-            alt="ddsf"
-            class="transition-transform hover:scale-105 duration-500 hidden sm:block"
-            draggable="false"
-          />
-        </div>
-      </section>
-      <!-- about section  -->
-      <section id="about">
-        <div class="mx-auto max-w-screen-xl px-4 py-24 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-            <div
-              class="relative h-64 pt-10 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
-            >
-              <img
-                alt="AMC building"
-                src="{% static 'landing/amc_building.webp' %}"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-
-            <div class="lg:py-24">
-              <h2 class="text-2xl font-bold sm:text-4xl">
-                The Complaint and Decision Making System by AMC
-              </h2>
-
-              <p class="mt-6 text-gray-500">
-                This system is designed for the people of Ahmedabad, to solve
-                their complaints in a very efficient manner with the help of
-                technology. The process of resolving complaints is very slow due
-                to many reasons one of them being the complaint not reaching the
-                right authority in time, this system solves that problem by
-                directly posting people's complaints to the right authority in
-                time.
-              </p>
-
-              <a
-                href="/login"
-                class="mt-8 inline-flex items-center rounded-lg transition-transform hover:scale-110 duration-300 border border-indigo-500 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-              >
-                <span class="text-sm font-bold"> Get Started </span>
-
-                <svg
-                  class="ml-3 h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- process section  -->
-      <section id="process" class="max-w-6xl mx-auto">
-        <div class="text-4xl pl-3 sm:pl-0 font-bold flex justify-start">
-          Proccess Of filing complaint
-        </div>
-        <div class="grid sm:grid-cols-2 grid-cols-1 gap-3 sm:py-20 py-10">
-          <div
-            class="shadow-lg hover:shadow-xl transition-transform hover:scale-105 duration-300 rounded-lg mx-5 my-5"
-          >
-            <h2
-              class="text-2xl text-indigo-500 px-5 py-2 font-bold sm:text-3xl"
-            >
-              Registration
-            </h2>
-
-            <p class="mt-6 px-5 pb-3 text-gray-500">
-              Register yourself on the AMC complaint management system, fill in
-              the required details
-            </p>
-          </div>
-          <div
-            class="shadow-lg hover:shadow-xl transition-transform hover:scale-105 duration-300 rounded-lg mx-5 my-5"
-          >
-            <h2
-              class="text-2xl text-indigo-500 px-5 py-2 font-bold sm:text-3xl"
-            >
-              File your Complaint
-            </h2>
-
-            <p class="mt-6 px-5 pb-3 text-gray-500">
-              After registering yourself on the portal, make a new complaint.
-              select the sector, and the category of your complaint, and
-              description or image about your complaint
-            </p>
-          </div>
-          <div
-            class="shadow-lg hover:shadow-xl transition-transform hover:scale-105 duration-300 rounded-lg mx-5 my-5"
-          >
-            <h2
-              class="text-2xl text-indigo-500 px-5 py-2 font-bold sm:text-3xl"
-            >
-              Get updates
-            </h2>
-
-            <p class="mt-6 px-5 pb-3 text-gray-500">
-              You will get updates about the status of your complaint with
-              description of what is happening with your complaint
-            </p>
-          </div>
-          <div
-            class="shadow-lg hover:shadow-xl transition-transform hover:scale-105 duration-300 rounded-lg mx-5 my-5"
-          >
-            <h2
-              class="text-2xl text-indigo-500 px-5 py-2 font-bold sm:text-3xl"
-            >
-              Complaint Resolved
-            </h2>
-
-            <p class="mt-6 px-5 pb-3 text-gray-500">
-              Your complaint will be reviwed and resolved by the AMC officals in
-              given timelimit
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- contact section -->
-      <section id="contact">
-        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div class="lg:col-span-2 lg:py-12">
-              <p class="max-w-xl text-lg">
-                The Amdavad Municipal Corporation, or the AMC, established in
-                July 1950 under the Bombay Provincial Corporation Act, is
-                responsible for the civic infrastructure and administration of
-                the city of Ahmedabad
-              </p>
-
-              <div class="mt-8">
-                <a href="" class="text-2xl font-bold text-indigo-600">
-                  07925391811
-                </a>
-
-                <address class="mt-2 not-italic">
-                  2H55+F4M, Vikas Gruh Rd, Fatehpura Gam, Paldi, Ahmedabad,
-                  Gujarat 380007
-                </address>
-              </div>
-            </div>
-
-            <div
-              class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12"
-            >
-              <form action="" class="space-y-4">
-                <div>
-                  <label class="sr-only" for="name">Name</label>
-                  <input
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Name"
-                    type="text"
-                    id="name"
-                  />
-                </div>
-
-                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <label class="sr-only" for="email">Email</label>
-                    <input
-                      class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Email address"
-                      type="email"
-                      id="email"
-                    />
-                  </div>
-
-                  <div>
-                    <label class="sr-only" for="phone">Phone</label>
-                    <input
-                      class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Phone Number"
-                      type="tel"
-                      id="phone"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label class="sr-only" for="message">Message</label>
-                  <textarea
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Message"
-                    rows="8"
-                    id="message"
-                  ></textarea>
-                </div>
-
-                <div class="mt-4">
-                  <button
-                    type="submit"
-                    class="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
-                  >
-                    <span class="font-medium"> Send Enquiry </span>
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="ml-3 h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <body>
+      {% block content %} {% endblock %}
+    </body>
     <footer class="bg-white">
       <div
         class="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24"
@@ -459,7 +70,9 @@
             <div
               class="flex justify-center sm:justify-start items-center gap-3"
             >
+            <a href="/">
               <img src="{% static 'logo/amc_logo.jpg' %}" class="h-20" alt="" />
+            </a>
               <h1 class="font-bold text-5xl">AMC</h1>
             </div>
 
@@ -845,6 +458,6 @@
         </div>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <script src="{% static 'main.js' %}"></script>
   </body>
 </html>

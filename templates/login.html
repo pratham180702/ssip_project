@@ -1,38 +1,26 @@
-{% extends "layouts/user_base.html" %} 
+{% extends "layouts/auth_base.html" %} 
 {% load crispy_forms_tags %} 
 {% load static %} 
 {% block css_link %}
 <!-- <link rel="stylesheet" href="{% static 'users/main.css' %}"> -->
 {% endblock %} {% block content %}
-<div class="login">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-5 col-md-5 login-body pl-4 pr-4 pb-4">
-        <form method="POST">
+<div class="w-screen mt-20 mb-10">
+<div class="flex justify-center items-center bg-gray-100 sm:w-4/12 mx-auto p-5 rounded-xl">
+        <form method="POST" class="w-2/3">
           {% csrf_token %}
           <fieldset class="form-group">
             <legend
-              class="border-bottom pt-4 pb-4 text-center"
-              style="color: black"
+              class="text-center text-2xl font-bold mb-10"
             >
               Sign In
             </legend>
             {{ form|crispy }}
           </fieldset>
-          <div class="form-group">
-            <button class="btn w-100 loginBtn" type="submit">Log in</button>
+          <div class="flex justify-center my-5">
+            <button class="bg-black hover:bg-indigo-500 py-2 px-5 text-white font-bold text-xl rounded-xl" type="submit">Log in</button>
           </div>
         </form>
-        <div class="border-top pt-3">
-          <small class="text-muted">
-            Don't Have An Account?
-            <a class="ml-2" href="{% url 'register' %}">Sign Up</a><br />
-            are you an admin?
-            <a class="ml-2" href="{% url 'admin-login' %}">Login</a>
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+</div>
+
 {% endblock content %}
